@@ -80,7 +80,8 @@ export default class RegisterContainer extends React.Component {
 			this.props.navigation.navigate('dashboard');
 		}).catch((err) => {
 			this.setState({showLoading : false});
-			alert(err.message);
+			if(err.hasOwnProperty('message')) alert(err.message);
+			else alert(err);
 		})
 	}
 

@@ -61,7 +61,8 @@ export default class LoginContainer extends React.Component {
 			this.props.navigation.navigate('dashboard');
 		}).catch((err) => {
 			this.setState({showLoading : false});
-			alert(err.message);
+			if(err.hasOwnProperty('message')) alert(err.message);
+			else alert(err);
 		})
 	}
 
