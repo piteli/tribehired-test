@@ -10,13 +10,30 @@ export default class LoginContainer extends React.Component {
 	}
 
 	initiateStates() {
+		this.state = {
+			email: '',
+			password: '',
+			showLoading: false
+		}
 	}
 
 	initiateInstances() {
+		this.login = this.login.bind(this);
+		this.onChangeInput = this.onChangeInput.bind(this);
+	}
 
+	onChangeInput(key, value) {
+		const data = {};
+		data[key] = value;
+		this.setState(data);
+	}
+
+	login(){
+		//call api from server and return json response
 	}
 
 	render() {
-		return <Login  />
+		return <Login {...this.state} navigation={this.props.navigation} login={this.login}
+		onChangeInput={this.onChangeInput} />
 	}
 }

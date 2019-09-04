@@ -1,7 +1,7 @@
 import React from "react";
 import Register from "./Register";
 
-class RegisterContainer extends React.Component {
+export default class RegisterContainer extends React.Component {
 
 	constructor(props) {
 		super(props);

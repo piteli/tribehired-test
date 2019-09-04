@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import DashboardMainIndex from '../../screens/dashboard/dashboard-main';
 
-export const RootStack = createStackNavigator(
+export const dashboard = createStackNavigator(
   {
     dashboard_main: {
         screen: DashboardMainIndex,
@@ -16,6 +17,6 @@ export const RootStack = createStackNavigator(
   }
 );
 
-const AppStack = createAppContainer(RootStack);
+const DashboardStack = createAppContainer(dashboard);
 
-export default AppStack;
+export default DashboardStack;
