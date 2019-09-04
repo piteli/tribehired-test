@@ -1,5 +1,5 @@
-# tribehired-test
-Tribehired test
+# tribehired-test-rn
+Tribehired test-rn
 
 ## Installation and running
 
