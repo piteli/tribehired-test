@@ -1,5 +1,7 @@
 import React from "react";
 import Register from "./Register";
+import Api from '../../../services/Api';
+import { URL_END_PATH } from '../../../utilities/Contants';
 
 export default class RegisterContainer extends React.Component {
 
@@ -57,11 +59,7 @@ export default class RegisterContainer extends React.Component {
 			this.errorInputMessage = "Password's field cannot be empty";
 			return false;
 		}
-		if (!this.state.password.match("\\d+")) {
-			this.errorInputMessage = "Password must be alpha numeric! for example, 'johny123'";
-			return false;
-		}
-		if (!this.state.password.match(/[a-z]/i)) {
+		if (!this.state.password.match("\\d+") || !this.state.password.match(/[a-z]/i)) {
 			this.errorInputMessage = "Password must be alpha numeric! for example, 'johny123'";
 			return false;
 		}
@@ -71,7 +69,19 @@ export default class RegisterContainer extends React.Component {
 	
 	register(){
 		if (!this.validateAllInput()) return alert(this.errorInputMessage);
-		//call register api
+
+		//call register api, get json response and save to internal storage, then redirect to dashboard view
+		this.setState({showLoading : true});
+		const payload = { email : this.state.email , password : this.state.password, username : this.state.username };
+		new Api().postApiWithBaseURL(URL_END_PATH.REGISTER_URL, payload, null, false, false, null)
+		.then((response) => response.json())
+		.then((res) => {
+			this.setState({showLoading : false});
+			this.props.navigation.navigate('dashboard');
+		}).catch((err) => {
+			this.setState({showLoading : false});
+			alert(err.message);
+		})
 	}
 
 	render() {

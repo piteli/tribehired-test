@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DashboardMainContainer from './DashboardMainContainer';
 
-export default class RegisterIndex extends Component {
+export default class DashboardMainIndex extends Component {
     
   render() {
     const { navigation } = this.props;

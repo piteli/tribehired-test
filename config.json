@@ -1,5 +1,5 @@
 {
     "prodMode" : false,
-    "prodBaseURL" : "http://production-api-url.com",
-    "devBaseURL" : "http://development-api-url.com"
+    "prodBaseURL" : "https://tribehired-test-prod-api.herokuapp.com",
+    "devBaseURL" : "https://tribehired-test-dev-api.herokuapp.com"
 }
