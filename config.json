@@ -1,0 +1,5 @@
+{
+    "prodMode" : false,
+    "prodBaseURL" : "http://production-api-url.com",
+    "devBaseURL" : "http://development-api-url.com"
+}

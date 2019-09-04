@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 33,
-    textAlign: 'center',
+    textAlign: 'left',
     marginBottom: 50,
     color : 'white'
 
@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
   },
   loginBtn: {
     marginTop: 20,
-    backgroundColor: '#0094d4',
+    backgroundColor: '#63615e',
     borderRadius: 30,
   },
   loginText: {

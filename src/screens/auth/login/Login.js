@@ -8,7 +8,7 @@ export default class Login extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <ImageBackground
-          source={{uri : "https://cdn.pixabay.com/photo/2016/06/17/06/04/background-1462755_960_720.jpg"}}
+          source={{uri : "https://i.pinimg.com/originals/0a/eb/4f/0aeb4f2ffb03ad1493a45e2192586153.jpg"}}
           style={{ flex: 1, width: '100%' }}
         >
           <View style={styles.welcomeContainer}>
@@ -33,6 +33,13 @@ export default class Login extends React.Component {
                 onPress={() => this.props.login()}
               >
                 <Text allowFontScaling={false} style={styles.loginText}>Log in</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => this.props.navigation.push('register')}
+                style={{marginTop : 20}}
+              >
+                <Text allowFontScaling={false} style={{color : 'white', textAlign : 'center'}}>Don't have an account? Press here to register</Text>
               </TouchableOpacity>
               <PopupSpinner loadingSpinnerVisible={this.props.showLoading} textDisplay={"Logging in..."} />
 
