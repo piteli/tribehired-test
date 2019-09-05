@@ -51,6 +51,7 @@ export default class RegisterIndex extends Component {
   }
 
   searchRegisteredUsername(str){
+    str = str.toLowerCase();
     if(this.timeout != null){
         this.setState({showLoadingData : false, usersData : []});
         clearTimeout(this.timeout);

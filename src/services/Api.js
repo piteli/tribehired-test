@@ -30,6 +30,7 @@ export default class Api extends React.Component {
   }
 
   postApiWithBaseURL(path, body, authenticationType, useCustomHeader, addDefaultCustomHeader, extraArgsHeader){
+    console.log(`${new Env().getBaseUrl()}${path}`);
     return fetch(`${new Env().getBaseUrl()}${path}`, {
       method: 'POST',
       body: JSON.stringify(body),

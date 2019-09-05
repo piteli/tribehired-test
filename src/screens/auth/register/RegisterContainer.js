@@ -73,6 +73,7 @@ export default class RegisterContainer extends React.Component {
 		//call register api, get json response and save to internal storage, then redirect to dashboard view
 		this.setState({showLoading : true});
 		const payload = { email : this.state.email , password : this.state.password, username : this.state.username };
+		console.log(URL_END_PATH.REGISTER_URL);
 		new Api().postApiWithBaseURL(URL_END_PATH.REGISTER_URL, payload, null, false, false, null)
 		.then((response) => response.json())
 		.then((res) => {
