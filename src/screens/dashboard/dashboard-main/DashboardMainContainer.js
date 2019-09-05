@@ -29,16 +29,17 @@ export default class RegisterIndex extends Component {
   componentDidMount(){}
 
   logout(){
-    this.setState({showLogoutPopup : true});
-    new Api().postApiWithBaseURL(URL_END_PATH.LOGOUT_URL, {}, null, false, false, null)
-    .then((response) => response.json())
-    .then((res) => {
-        this.setState({showLogoutPopup : false});
-        this.redirectToLoginView();
-    }).catch((err) => {
-        this.setState({showLogoutPopup : false});
-        alert('An error Occurred, Please try again.')
-    })
+    this.redirectToLoginView();
+    // this.setState({showLogoutPopup : true});
+    // new Api().postApiWithBaseURL(URL_END_PATH.LOGOUT_URL, {}, null, false, false, null)
+    // .then((response) => response.json())
+    // .then((res) => {
+    //     this.setState({showLogoutPopup : false});
+    //     this.redirectToLoginView();
+    // }).catch((err) => {
+    //     this.setState({showLogoutPopup : false});
+    //     alert('An error Occurred, Please try again.')
+    // })
   }
   
   redirectToLoginView(){
